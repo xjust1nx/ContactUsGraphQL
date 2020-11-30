@@ -1,0 +1,23 @@
+# @description Magento Module for Contact Us Form using GraphQL
+# @author   Codilar Team Player <sooraj.pr@codilar.com>
+# @license  Open Source
+# @link     https://www.codilar.com
+# @copyright Copyright © 2020 Codilar Technologies Pvt. Ltd.. All rights reserved
+#
+# Magento Module for Contact Us Form using GraphQL
+#
+@doc(description: "Contact us mail")
+type Mutation {
+    contactUs (
+        name: String! @doc(description: "Name of the customer")
+        email: String! @doc(description: "Mail of the customer")
+        phone: String! @doc(description: "Phone number of the customer")
+        message: String! @doc(description: "Message to send")
+    ): ContactUsResponse
+    @resolver(class: "Codilar\\ContactUsGraphQL\\Model\\Resolver\\SendMail")
+}
+
+@doc(description: "Response message")
+type ContactUsResponse {
+    successMessage: String
+}
