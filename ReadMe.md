@@ -1,5 +1,3 @@
-﻿Todo
-
 ## ContactUsGraphQL
 
 For contacting GraphQL to an existing module, we first have to create schema.graphqls which defines the GraphQL types which we want to create.
